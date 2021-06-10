@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "initDb": "docker exec -i nextjs-1_mysql_1 sh -c 'mysql -uroot -p\"$MYSQL_ROOT_PASSWORD\" $MYSQL_DATABASE' < db/schema.sql"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.5",
     "@graphql-codegen/typescript": "1.22.1",
+    "@graphql-codegen/typescript-operations": "^1.18.0",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.5",
     "@graphql-codegen/typescript-resolvers": "1.19.2",
     "@types/node": "^15.12.1",
     "@types/react": "^17.0.9",
@@ -20,6 +23,7 @@
     "@apollo/client": "^3.3.19",
     "apollo-server-micro": "^2.25.0",
     "graphql": "^15.5.0",
+    "graphql-tools": "^7.0.5",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
